@@ -1,0 +1,23 @@
+name: Slack Notification
+
+on:
+  workflow_call:
+    inputs:
+      token:
+        description: 'Slack API Token'
+        required: true
+        type: string
+
+jobs:
+  send-message:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Slack API
+        run: echo "Configuring the slack api with token ${{ inputs.project-key }}"
+      
+      - name: Sending Message
+        run: echo "Sending the message with webhook endpoint"
+
+      - name: Ackg
+        run: echo "Message send successfully"
