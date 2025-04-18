@@ -1,0 +1,15 @@
+name: Greet Workflow
+
+on:
+  workflow_call:
+    inputs:
+      Name:
+        required: true
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Name
+        run: echo "Hello, ${{ inputs.Name }}!"
